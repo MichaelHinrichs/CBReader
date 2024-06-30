@@ -76,8 +76,8 @@ namespace b3d
 			/** @todo What are the flags*/
 			std::uint32_t flags;
 			std::uint32_t blend;
-			Vector2 position;
-			Vector2 scale;
+			cbtypes::Vector2 position;
+			cbtypes::Vector2 scale;
 			float rotation;
 		};
 
@@ -91,7 +91,7 @@ namespace b3d
 		struct BRUSSubData
 		{
 			std::string name;
-			Color color;
+			cbtypes::Color color;
 			float shininess;
 			std::uint32_t blend;
 			std::uint32_t fx;
@@ -135,9 +135,9 @@ namespace b3d
 		*/
 		struct VRTSSubData
 		{
-			Vector3 position;
-			Vector3 normal;
-			Color color;
+			cbtypes::Vector3 position;
+			cbtypes::Vector3 normal;
+			cbtypes::Color color;
 			std::vector<std::vector<float>> textureCoordinates;
 		};
 
@@ -149,7 +149,7 @@ namespace b3d
 	struct TRISChunk : public B3DChunk
 	{
 		std::uint32_t brushId = 0;
-		std::vector<Triangle> triangles;
+		std::vector<cbtypes::Triangle> triangles;
 
 		virtual void Process(BufferStream& stream) override;
 	};
@@ -182,9 +182,9 @@ namespace b3d
 		struct KEYSSubData
 		{
 			std::uint32_t frame = 0;
-			Vector3 position;
-			Vector3 scale;
-			Quaternion rotation;
+			cbtypes::Vector3 position;
+			cbtypes::Vector3 scale;
+			cbtypes::Quaternion rotation;
 		};
 
 		KEYSChunk::KeyFlags flags;
@@ -209,9 +209,9 @@ namespace b3d
 		struct NODESubData
 		{
 			std::string name;
-			Vector3 position;
-			Vector3 scale;
-			Quaternion rotation;
+			cbtypes::Vector3 position;
+			cbtypes::Vector3 scale;
+			cbtypes::Quaternion rotation;
 		};
 
 		NODESubData nodeData;
